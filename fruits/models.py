@@ -12,7 +12,12 @@ class BaseModel(models.Model):
 
 class Fruit(BaseModel):
     name = models.CharField(max_length=100)
-    # market_value = models.
+    last_price = models.DecimalField(max_digits=10, decimal_places=2)
     
     class Meta:
         db_table = '"coreschema"."fruit"'
+
+
+class Vegetable(BaseModel):
+    name = models.CharField(max_length=100)
+    last_price = models.DecimalField(max_digits=10, decimal_places=2)
